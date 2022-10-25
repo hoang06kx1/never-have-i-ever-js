@@ -25,8 +25,8 @@ const __dirname = path.resolve();
 /** Get port from environment and store in Express. */
 // const port = process.PORT || '3000';
 console.log(process.env)
-const port = process.evn.PORT || 80;
-app.set('port', port);
+const PORT = process.env.PORT || 3000;
+app.set('port', PORT);
 
 app.use(logger('dev'));
 app.use(cors());
@@ -56,8 +56,8 @@ const server = http.createServer(app);
 global.io = new Server(server);
 global.io.on('connection', WebSockets.connection);
 /** Listen on provided port, on all network interfaces. */
-server.listen(port);
+server.listen(PORT);
 /** Event listener for HTTP server "listening" event. */
 server.on('listening', () => {
-	console.log(`Listening on port (if localhost):: http://localhost:${port}/`);
+	console.log(`Listening on port (if localhost):: http://localhost:${PORT}/`);
 });
