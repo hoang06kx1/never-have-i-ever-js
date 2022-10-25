@@ -5,7 +5,8 @@ import bcrypt from 'bcrypt';
 import UserModel from '../models/User.js';
 import TokenInvalidModel from '../models/TokenInvalid.js';
 
-const tokenKey = dotenv.config().parsed.TOKEN_KEY;
+// const tokenKey = dotenv.config().parsed.TOKEN_KEY;
+const tokenKey = 'never-have-ever';
 
 export const encode = async (req, res, next) => {
 	try {

@@ -6,7 +6,8 @@ import dotenv from 'dotenv';
 // models
 import RoomModel from '../models/Room.js';
 
-const tokenKey = dotenv.config().parsed.TOKEN_KEY;
+// const tokenKey = dotenv.config().parsed.TOKEN_KEY;
+const tokenKey = 'never-have-ever';
 
 export default {
 	onGetAllRooms: async (req, res) => {
