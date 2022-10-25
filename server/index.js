@@ -3,7 +3,7 @@ import express from 'express';
 import logger from 'morgan';
 import cors from 'cors';
 import { Server } from 'socket.io';
-import dotenv from 'dotenv';
+// import dotenv from 'dotenv';
 import path from 'path';
 // mongo connection
 import './config/mongo.js';
@@ -19,12 +19,13 @@ import { decode } from './middlewares/jwt.js';
 import WebSockets from './utils/WebSockets.js';
 
 const app = express();
-const process = dotenv.config().parsed;
+// const process = dotenv.config().parsed;
 const __dirname = path.resolve();
 
 /** Get port from environment and store in Express. */
 // const port = process.PORT || '3000';
-const port = '8080';
+
+const port = process.evn.PORT || 5000;
 app.set('port', port);
 
 app.use(logger('dev'));
@@ -58,5 +59,5 @@ global.io.on('connection', WebSockets.connection);
 server.listen(port);
 /** Event listener for HTTP server "listening" event. */
 server.on('listening', () => {
-	console.log(`Listening on port:: http://localhost:${port}/`);
+	console.log(`Listening on port (if localhost):: http://localhost:${port}/`);
 });
