@@ -25,7 +25,7 @@ const __dirname = path.resolve();
 /** Get port from environment and store in Express. */
 // const port = process.PORT || '3000';
 console.log(process.env)
-const port = process.evn.PORT || 5000;
+const port = process.evn.PORT || 80;
 app.set('port', port);
 
 app.use(logger('dev'));
