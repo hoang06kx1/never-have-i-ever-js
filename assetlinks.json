@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "nfq.asia.neverever",
+    "sha256_cert_fingerprints":
+    ["3A:83:D8:FB:03:1F:59:CC:EC:C0:22:BD:C7:7B:DB:06:77:A2:98:DC:58:B8:4D:2E:84:FF:17:D3:C6:FC:41:A6"]
+  }
+}]

@@ -24,7 +24,6 @@ const __dirname = path.resolve();
 
 /** Get port from environment and store in Express. */
 // const port = process.PORT || '3000';
-console.log(process.env)
 const PORT = process.env.PORT || 3000;
 app.set('port', PORT);
 
@@ -38,6 +37,7 @@ app.use('/users', userRouter);
 app.use('/categories', categoriesRouter);
 app.use('/rooms', roomRouter);
 app.use('/favorite-questions', favoriteQuestionsRouter);
+app.use('/.well-known/assetlinks.json', express.static(__dirname + '/assetlinks.json'));
 
 app.get('/', function (req, res) {
 	res.sendFile(__dirname + '/index.html');
